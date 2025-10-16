@@ -1,0 +1,31 @@
+[project]
+name = "kiout-test"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "HelegKumachev", email = "kumachev.oleg@gmail.com"}
+]
+requires-python = ">=3.10"
+dependencies = [
+    "django>=5.2.7,<6.0.0",
+    "djangorestframework>=3.15.2,<4.0.0",
+    "django-filter>=25.2,<26.0",
+    "django-import-export (>=4.3.10,<5.0.0)",
+    "tablib (>=3.8.0,<4.0.0)",
+    "xlrd (>=2.0.2,<3.0.0)",
+    "openpyxl (>=3.1.5,<4.0.0)",
+    "drf-spectacular (>=0.28.0,<0.29.0)",
+    "pytest-django (>=4.11.1,<5.0.0)",
+    "model-bakery (>=1.20.5,<2.0.0)",
+    "pytest-cov (>=7.0.0,<8.0.0)",
+    "pandas (>=2.3.3,<3.0.0)",
+    "pre-commit (>=4.3.0,<5.0.0)",
+]
+
+# отключаем установку проекта как пакета
+[tool.poetry]
+packages = []
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

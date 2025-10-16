@@ -1,0 +1,32 @@
+GET http://localhost:8000/api/workers/
+Authorization: Token 9e8fb46226fec9c011c97a2a58386c02bdc56dc2
+###
+
+POST http://localhost:8000/api/workers/
+Content-Type: application/json
+Authorization: Token 9e8fb46226fec9c011c97a2a58386c02bdc56dc2
+
+{
+  "first_name": "Иван",
+  "middle_name": "Иванов",
+  "last_name": "Иванович",
+  "email": "ivan.ivanov@company.com",
+  "position": "Backend Developer",
+  "is_active": true
+}
+
+###
+
+PATCH http://localhost:8000/api/workers/4/
+Content-Type: application/json
+Authorization: Token 893756b701204775d64bdd54228d267b5557082c
+
+{
+  "email": "new.email@company.com",
+  "is_active": false
+}
+
+###
+POST http://localhost:8000/api/workers/import/
+Content-Type: multipart/form-data
+Authorization: Token 9e8fb46226fec9c011c97a2a58386c02bdc56dc2
