@@ -20,6 +20,7 @@ dependencies = [
     "pytest-cov (>=7.0.0,<8.0.0)",
     "pandas (>=2.3.3,<3.0.0)",
     "pre-commit (>=4.3.0,<5.0.0)",
+    "python-dotenv (>=1.1.1,<2.0.0)",
 ]
 
 # отключаем установку проекта как пакета
@@ -29,3 +30,15 @@ packages = []
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 88
+target-version = ['py311']
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.ruff]
+line-length = 88
+extend-exclude = ["kiout_test_backend/settings.py"]

@@ -6,7 +6,6 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = [
@@ -15,17 +14,47 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Worker',
+            name="Worker",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('first_name', models.CharField(help_text='Введите имя', max_length=50)),
-                ('middle_name', models.CharField(help_text='Введите фамилию', max_length=50)),
-                ('last_name', models.CharField(blank=True, help_text='Введите отчество при наличии', max_length=50)),
-                ('email', models.EmailField(help_text='email', max_length=255)),
-                ('position', models.CharField(blank=True, help_text='Должность', max_length=100)),
-                ('is_active', models.BooleanField(default=True)),
-                ('hired_date', models.DateTimeField(auto_now_add=True)),
-                ('created_by', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "first_name",
+                    models.CharField(help_text="Введите имя", max_length=50),
+                ),
+                (
+                    "middle_name",
+                    models.CharField(help_text="Введите фамилию", max_length=50),
+                ),
+                (
+                    "last_name",
+                    models.CharField(
+                        blank=True,
+                        help_text="Введите отчество при наличии",
+                        max_length=50,
+                    ),
+                ),
+                ("email", models.EmailField(help_text="email", max_length=255)),
+                (
+                    "position",
+                    models.CharField(blank=True, help_text="Должность", max_length=100),
+                ),
+                ("is_active", models.BooleanField(default=True)),
+                ("hired_date", models.DateTimeField(auto_now_add=True)),
+                (
+                    "created_by",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.PROTECT,
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
     ]
